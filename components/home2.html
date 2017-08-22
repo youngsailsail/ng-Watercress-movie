@@ -1,0 +1,37 @@
+
+<div ng-show="type" class="rimg">
+    <img src="images/loading.gif" alt="">
+</div>
+
+    <div class="rig-head" ng-hide="type" >
+     <h1 ng-bind="regs.title">正在热映的电影</h1>
+    </div>
+    <ul ng-hide="type" >
+        <li ng-repeat=' (key,value) in regs.subjects'>
+            <a href="#!/detail/{{value.id}}">
+                <span>
+           <img ng-src="{{value.images.small}}" src="../images/img.png" alt="">
+                </span>
+             <div>
+                 <h4 ng-bind="value.title">神偷奶爸3</h4>
+                <p ng-bind="value.genres">类型</p>
+                <p>导演:
+                <span ng-repeat="name11 in value.directors">{{name11.name}}&nbsp&nbsp&nbsp</span>
+                </p>
+                <p>主演:
+                <span ng-repeat="name22 in value.casts">{{name22.name}}&nbsp&nbsp&nbsp</span>
+                </p>
+              </div>
+                <span ng-bind="value.rating.stars">42分</span>
+            </a>
+        </li>
+    </ul>
+<div class="page" style="height:100px;line-height: 100px" ng-hide="type">
+         <span>{{currPage}}/{{allPage}}</span>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+        <a ng-click="move(true)"  ng-show="type2" style="cursor:pointer">上一页</a>
+        <a ng-click="move(false)" ng-show="type3" style="cursor:pointer">下一页</a>
+</div>
+
+
+
+

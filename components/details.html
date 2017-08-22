@@ -1,0 +1,21 @@
+<div ng-show="type" class="rimg">
+    <img src="images/loading.gif" alt="">
+</div>
+<div ng-hide="type">
+    <div class="rig-head" >
+        <h1 >电影详情</h1>
+    </div>
+    <dl class="dedl">
+        <dd>
+            <img src="images/img.png" alt="" ng-src="{{regs2.images.large}}">
+        </dd>
+        <dd>
+            <p ng-bind="regs2.title"></p>
+            <p>类型:<span ng-bind="regs2.genres"></span></p>
+            <p>导演:<span ng-repeat="name3 in regs2.directors">{{name3.name}}</span></p>
+            <p>主演:<span ng-repeat="name4 in regs2.casts">{{name4.name}}</span></p>
+            <p ng-bind="regs2.summary" class="fin">电影描述信息</p>
+        </dd>
+
+    </dl>
+</div>
